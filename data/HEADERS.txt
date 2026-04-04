@@ -1,0 +1,40 @@
+Identificativo di Coppia
+
+	pair_id: Chiave primaria numerica. Identificativo univoco assegnato a ciascuna coppia analizzata (Valori: da 1 a 100.000).
+
+Variabili Individuali (Prefissi a_ per il Partner A e b_ per il Partner B)
+Le seguenti variabili sono registrate simmetricamente per entrambi gli individui della coppia.
+
+	[a/b]_age: Età anagrafica dell'individuo. Variabile numerica intera (Range: 18 - 55 anni).
+
+	[a/b]_education: Livello accademico massimo raggiunto. Variabile ordinale basata su una scala da 1 a 5 (Valori espliciti: 1 = High 	School, 2 = Associate Degree, 3 = Bachelor's 	Degree, 4 = Master's Degree, 5 = PhD).
+
+	[a/b]_location: Tipologia di ambiente residenziale. Variabile categorica (Valori espliciti: Urban, Suburban, Rural).
+
+	[a/b]_career_field: Settore professionale di appartenenza. Variabile categorica (Valori espliciti principali: Finance, 	Engineering, Marketing, Science, Law, Healthcare, Tech, 	Other).
+
+	[a/b]_career_ambition: Livello di ambizione e spinta alla carriera. Variabile continua normalizzata (Range: 0.0 [Bassa ambizione] 	a 1.0 [Alta ambizione]).
+
+	[a/b]_openness: Tratto della personalità "Apertura mentale" (Big Five). Misura la predisposizione a nuove esperienze. Variabile 	continua normalizzata (Range: 0.0 a 1.0).
+
+	[a/b]_extraversion: Tratto della personalità "Estroversione" (Big Five). Misura l'energia sociale rispetto all'introversione. 	Variabile continua normalizzata (Range: 0.0 a 1.0).
+
+	[a/b]_agreeableness: Tratto della personalità "Amicalità" (Big Five). Misura l'empatia e la propensione alla cooperazione. 	Variabile continua normalizzata (Range: 0.0 a 1.0).
+
+	[a/b]_conscientiousness: Tratto della personalità "Coscienziosità" (Big Five). Misura il grado di organizzazione e responsabilità. 	Variabile continua normalizzata (Range: 0.0 a 	1.0).
+
+	[a/b]_chronotype: Ritmo circadiano e preferenza per le attività diurne o notturne. Variabile continua normalizzata (Range: 0.0 	[Estremamente mattiniero/Allodola] a 1.0 	[Estremamente notturno/Gufo]).
+
+	[a/b]_spontaneity: Livello di impulsività e propensione a prendere decisioni non pianificate. Variabile continua normalizzata 	(Range: 0.0 a 1.0).
+
+	[a/b]_love_language: Linguaggio dell'amore primario per la ricezione e l'espressione di affetto. Variabile categorica (Valori 	espliciti: Words of Affirmation, Quality Time, 	Receiving Gifts, Acts of Service, Physical Touch).
+
+	[a/b]_emotional_expressiveness: Grado di facilità nell'esprimere apertamente le proprie emozioni. Variabile continua normalizzata 	(Range: 0.0 [Chiusura emotiva] a 1.0 [Alta 	espressività]).
+
+Metriche di Compatibilità e Risultato (Variabili Target)
+
+	compatibility_score: Indice algoritmico calcolato che stima l'affinità della coppia basandosi sui tratti individuali. Variabile 	continua (Range: da 16.5 a 100.0).
+
+	compatible: Valutazione binaria del successo potenziale della coppia. Variabile booleana (Valori: 0 = Non compatibili, 1 = 	Compatibili).
+
+	relationship_longevity_months: Durata effettiva o proiettata della relazione. Variabile numerica intera (Range: 0 a 120 mesi).
