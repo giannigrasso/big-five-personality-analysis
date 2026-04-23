@@ -1,0 +1,79 @@
+Questi dati sono stati raccolti (2016-2018) attraverso un test di personalità interattivo on-line.
+Il test di personalità è stato costruito con i "Big-Five Factor Markers" dell'IPIP. https://ipip.ori.org/newBigFive5broadKey.htm
+I partecipanti sono stati informati all'inizio del test che le loro risposte sarebbero state registrate e utilizzate per la ricerca, e alla fine del test è stato chiesto loro di confermare il consenso.
+
+I seguenti elementi sono stati presentati su un'unica pagina e ciascuno è stato valutato su una scala di cinque punti utilizzando dei pulsanti di opzione (radio buttons). L'ordine sulla pagina era EXT1, AGR1, CSN1, EST1, OPN1, EXT2, ecc.
+La scala era etichettata 1=In disaccordo, 3=Neutrale, 5=D'accordo
+
+ESTROVERSIONE
+EXT1	Sono l'anima della festa.
+EXT2	Non parlo molto.
+EXT3	Mi sento a mio agio in mezzo alla gente.
+EXT4	Resto in disparte.
+EXT5	Inizio le conversazioni.
+EXT6	Ho poco da dire.
+EXT7	Parlo con molte persone diverse alle feste.
+EXT8	Non mi piace attirare l'attenzione su di me.
+EXT9	Non mi dispiace essere al centro dell'attenzione.
+EXT10	Sono silenzioso in presenza di sconosciuti.
+
+STABILITA EMOZIONALE
+EST1	Mi stresso facilmente.
+EST2	Sono rilassato la maggior parte del tempo.
+EST3	Mi preoccupo per le cose.
+EST4	Raramente mi sento giù.
+EST5	Mi turbo facilmente.
+EST6	Mi arrabbio facilmente.
+EST7	Cambio spesso umore.
+EST8	Ho frequenti sbalzi d'umore.
+EST9	Mi irrito facilmente.
+EST10	Mi sento spesso giù.
+
+AMABILITA
+AGR1	Provo poca preoccupazione per gli altri.
+AGR2	Mi interesso alle persone.
+AGR3	Insulto le persone.
+AGR4	Simpatizzo con i sentimenti degli altri.
+AGR5	Non mi interesso ai problemi delle altre persone.
+AGR6	Ho un cuore tenero.
+AGR7	Non sono molto interessato agli altri.
+AGR8	Trovo del tempo per gli altri.
+AGR9	Sento le emozioni degli altri.
+AGR10	Metto le persone a proprio agio.
+
+COSCIENZIOSTA/EMPATIA
+CSN1	Sono sempre preparato.
+CSN2	Lascio le mie cose in giro.
+CSN3	Presto attenzione ai dettagli.
+CSN4	Faccio disastri.
+CSN5	Faccio subito i miei compiti.
+CSN6	Spesso dimentico di rimettere le cose al loro posto.
+CSN7	Mi piace l'ordine.
+CSN8	Evito i miei doveri.
+CSN9	Seguo un programma.
+CSN10	Sono esigente nel mio lavoro.
+
+INTELLIGENCE
+OPN1	Ho un vocabolario ricco.
+OPN2	Ho difficoltà a capire le idee astratte.
+OPN3	Ho una vivida immaginazione.
+OPN4	Non mi interesso alle idee astratte.
+OPN5	Ho ottime idee.
+OPN6	Non ho una buona immaginazione.
+OPN7	Sono veloce a capire le cose.
+OPN8	Uso parole difficili.
+OPN9	Passo del tempo a riflettere sulle cose.
+OPN10	Sono pieno di idee.
+
+Il tempo trascorso su ogni domanda è registrato anche in millisecondi. Queste sono le variabili che finiscono in _E. Questo è stato calcolato prendendo il tempo in cui è stato cliccato il pulsante per la domanda meno il tempo del più recente clic su un altro pulsante.
+
+dateload	Il timestamp di quando è stato iniziato il sondaggio.
+screenw		La larghezza dello schermo dell'utente in pixel
+screenh		L'altezza dello schermo dell'utente in pixel
+introelapse	Il tempo in secondi trascorso sulla pagina di atterraggio / introduzione
+testelapse	Il tempo in secondi trascorso sulla pagina con le domande del sondaggio
+endelapse	Il tempo in secondi trascorso sulla pagina di finalizzazione (dove all'utente è stato chiesto di indicare se aveva risposto accuratamente e se le sue risposte potevano 		essere memorizzate e utilizzate per la ricerca. Ancora una volta: questo dataset include solo gli utenti che hanno risposto "Sì" a questa domanda, gli utenti erano liberi 		di rispondere no e potevano comunque visualizzare i loro risultati in ogni caso)
+IPC		Il numero di record dall'indirizzo IP dell'utente nel dataset. Per la massima pulizia, usa solo i record dove questo valore è 1. Valori alti possono essere dovuti a 			reti condivise (es. intere università) o invii multipli
+country		Il paese, determinato da informazioni tecniche (NON CHIESTO COME DOMANDA)
+lat_appx_lots_of_err	latitudine approssimativa dell'utente. determinata da informazioni tecniche, QUESTO NON È MOLTO ACCURATO. Leggi l'articolo "How an internet mapping glitch turned a 			random Kansas farm into a digital hell" https://splinternews.com/how-an-internet-mapping-glitch-turned-a-random-kansas-f-1793856052 per imparare i pericoli 				dell'affidarsi a queste informazioni
+long_appx_lots_of_err	longitudine approssimativa dell'utente
