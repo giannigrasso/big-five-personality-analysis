@@ -1,0 +1,138 @@
+#DISTANZA DELL'ISTOGRAMMA
+if 'IPC' in df.columns:
+    df = df[df['IPC'] == 1]
+
+question_cols = [f'{trait}{i}' for trait in ['EXT', 'EST', 'AGR', 'CSN', 'OPN'] for i in range(1, 11)]
+df = df.dropna(subset=question_cols)
+
+# ------------------------------
+# 2. INVERSIONE DOMANDE NEGATIVE PER STABILITÀ EMOTIVA (EST)
+# ------------------------------
+est_negative = ['EST2', 'EST4']
+for col in est_negative:
+    if col in df.columns:
+        df[col] = 6 - df[col]
+
+# ------------------------------
+# 3. CALCOLO STABILITÀ EMOTIVA E NEUROTICISMO
+# ------------------------------
+est_cols = [f'EST{i}' for i in range(1, 11)]
+df['Stabilità_Emotiva'] = df[est_cols].mean(axis=1)
+# Neuroticismo = 6 - Stabilità Emotiva (più alto = più ansia/stress)
+df['Neuroticismo'] = 6 - df['Stabilità_Emotiva']
+
+# ------------------------------
+# 4. CREAZIONE COLONNA ZONA RISCHIO (soglia >= 4.0)
+# ------------------------------
+df['Zona_Rischio'] = np.where(df['Neuroticismo'] >= 4.0, 
+                              'Alto Stress (Oltre 4.0)', 
+                              'Nella Norma')
+
+# ------------------------------
+# 5. ISTOGRAMMA CON PLOTLY.EXPRESS
+# ------------------------------
+fig = px.histogram(
+    df,
+    x='Neuroticismo',
+    color='Zona_Rischio',
+    nbins=40,
+    barmode='group',           # barre affiancate per confronto
+    opacity=0.8,
+    title="La curva del Burnout: Quante persone vivono con livelli estremi di stress?",
+    labels={'Neuroticismo': 'Punteggio di Neuroticismo (ansia/stress)', 
+            'count': 'Numero di persone',
+            'Zona_Rischio': 'Zona di rischio'},
+    color_discrete_map={
+        'Alto Stress (Oltre 4.0)': 'red',
+        'Nella Norma': 'lightblue'
+    }
+)
+
+# Imposta range dell'asse X (tipicamente 1-5, ma i valori estremi rari)
+fig.update_xaxes(range=[1.0, 5.0])
+
+# Aggiungi linea verticale sulla soglia 4.0
+fig.add_vline(x=4.0, line_dash="dash", line_color="darkred",
+              annotation_text="Soglia di Allarme (4.0)",
+              annotation_position="top")
+
+# Migliora layout
+fig.update_layout(
+    height=550,
+    width=850,
+    bargap=0.05,
+    legend_title_text='Condizione',
+    font=dict(size=12)
+)
+
+fig.show()
+
+
+
+
+
+
+
+
+
+
+
+#TROVA UN MODO MIGLIORE PER RAPPRESENTARE I 
+
+if 'IPC' in df.columns:
+    df = df[df['IPC'] == 1]
+
+question_cols = [f'{trait}{i}' for trait in ['EXT', 'EST', 'AGR', 'CSN', 'OPN'] for i in range(1, 11)]
+df = df.dropna(subset=question_cols)
+
+# ------------------------------
+# 2. CALCOLO ESTROVERSIONE (inversione domande negative)
+# ------------------------------
+ext_negative = ['EXT2', 'EXT4', 'EXT6', 'EXT8', 'EXT10']
+for col in ext_negative:
+    if col in df.columns:
+        df[col] = 6 - df[col]
+
+ext_cols = [f'EXT{i}' for i in range(1, 11)]
+df['Estroversione'] = df[ext_cols].mean(axis=1)
+
+# ------------------------------
+# 3. FILTRA ITALIA, SVIZZERA, STATI UNITI
+# ------------------------------
+countries_of_interest = ['IT', 'CH', 'US']
+df_filtered = df[df['country'].isin(countries_of_interest)].copy()
+
+# Mappa le sigle ai nomi completi
+nation_map = {'IT': 'Italia', 'CH': 'Svizzera', 'US': 'Stati Uniti'}
+df_filtered['Nazione'] = df_filtered['country'].map(nation_map)
+
+# ------------------------------
+# 4. ISTOGRAMMA SOVRAPPOSTO (percentuali)
+# ------------------------------
+fig = px.histogram(
+    df_filtered,
+    x='Estroversione',
+    color='Nazione',
+    nbins=40,
+    histnorm='percent',          # Normalizza in percentuale per confronto equo
+    barmode='overlay',           # Sovrappone le barre
+    opacity=0.6,                 # Trasparenza per vedere le sovrapposizioni
+    title="Scontro a tre: Estroversione tra Italia, Svizzera e Stati Uniti",
+    labels={'Estroversione': 'Punteggio di Estroversione', 
+            'percent': 'Percentuale di persone (%)'},
+    color_discrete_sequence=['green', 'red', 'blue']   # Italia, Svizzera, USA
+)
+
+# Migliora layout
+fig.update_layout(
+    height=500,
+    width=800,
+    bargap=0.05,
+    legend_title_text='Nazione',
+    font=dict(size=12)
+)
+
+# Imposta range dell'asse X (tipico 1-5)
+fig.update_xaxes(range=[1.0, 5.0])
+
+fig.show()

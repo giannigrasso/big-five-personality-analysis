@@ -72,8 +72,8 @@ screenw		La larghezza dello schermo dell'utente in pixel
 screenh		L'altezza dello schermo dell'utente in pixel
 introelapse	Il tempo in secondi trascorso sulla pagina di atterraggio / introduzione
 testelapse	Il tempo in secondi trascorso sulla pagina con le domande del sondaggio
-endelapse	Il tempo in secondi trascorso sulla pagina di finalizzazione (dove all'utente è stato chiesto di indicare se aveva risposto accuratamente e se le sue risposte potevano 		essere memorizzate e utilizzate per la ricerca. Ancora una volta: questo dataset include solo gli utenti che hanno risposto "Sì" a questa domanda, gli utenti erano liberi 		di rispondere no e potevano comunque visualizzare i loro risultati in ogni caso)
-IPC		Il numero di record dall'indirizzo IP dell'utente nel dataset. Per la massima pulizia, usa solo i record dove questo valore è 1. Valori alti possono essere dovuti a 			reti condivise (es. intere università) o invii multipli
-country		Il paese, determinato da informazioni tecniche (NON CHIESTO COME DOMANDA)
+endelapse	Il tempo in secondi trascorso sulla pagina di finalizzazione (dove all'utente è stato chiesto di indicare se aveva 			risposto accuratamente e se le sue risposte potevano essere memorizzate e utilizzate per la ricerca. Ancora una volta: 			questo dataset include solo gli utenti che hanno risposto "Sì" a questa domanda, gli utenti erano liberi di rispondere no 		e potevano comunque visualizzare i loro risultati in ogni caso)
+IPC		Il numero di record dall'indirizzo IP dell'utente nel dataset. Per la massima pulizia, usa solo i record dove questo 			valore è 1. Valori alti possono essere dovuti a reti condivise (es. intere università) o invii multipli 
+country 	Il paese, determinato da informazioni tecniche (NON CHIESTO COME DOMANDA)
 lat_appx_lots_of_err	latitudine approssimativa dell'utente. determinata da informazioni tecniche, QUESTO NON È MOLTO ACCURATO. Leggi l'articolo "How an internet mapping glitch turned a 			random Kansas farm into a digital hell" https://splinternews.com/how-an-internet-mapping-glitch-turned-a-random-kansas-f-1793856052 per imparare i pericoli 				dell'affidarsi a queste informazioni
 long_appx_lots_of_err	longitudine approssimativa dell'utente
