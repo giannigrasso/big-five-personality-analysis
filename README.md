@@ -1,53 +1,34 @@
-# DataScience_Project1
-Questo progetto è stato realizzato nell'ambito del corso di **Data Science** e consiste in un'analisi di un dataset reale.
+# Big Five Personality Analysis
+
+Analisi esplorativa di un dataset reale di test di personalità online, basato sui **Big Five Factor Markers** (IPIP), realizzata per il corso di Data Science.
 
 ## Dataset
-Il dataset contiene le risposte a un test di personalità online basato sui **Big Five Factor Markers**.
 
----
+Il dataset contiene ~1 milione di risposte a un test di personalità online (2016–2018), raccolto dall'[Open-Source Psychometrics Project](https://openpsychometrics.org/).
 
-## Struttura del Dataset
+- **Fonte**: [Big Five Personality Test — Kaggle](https://www.kaggle.com/datasets/tunguz/big-five-personality-test)
+- **Descrizione completa delle colonne**: [`data/description.txt`](data/description.txt)
 
-### Le 5 dimensioni della personalità (Big Five / OCEAN)
+Il file non è incluso nel repository: scaricalo dal link sopra e salvalo in `data/data-final.csv`.
 
-Ogni dimensione è misurata da **10 domande**, valutate da 1 (*In disaccordo*) a 5 (*D'accordo*).
-
-| Codice | Dimensione            | Descrizione                                                  |
-|--------|-----------------------|--------------------------------------------------------------|
-| `EXT`  | **Estroversione**     | Socievolezza, energia, tendenza a cercare stimoli esterni    |
-| `EST`  | **Stabilità Emotiva** | Calma, resistenza allo stress, controllo emotivo             |
-| `AGR`  | **Amabilità**         | Cooperazione, empatia, orientamento verso gli altri          |
-| `CSN`  | **Coscienziosità**    | Organizzazione, affidabilità, autodisciplina                 |
-| `OPN`  | **Apertura Mentale**  | Curiosità intellettuale, immaginazione, creatività           |
-
-### Tempi di risposta
-
-Per ogni domanda esiste una variabile `<CODICE>_E` (es. `EXT1_E`) che registra il **tempo in millisecondi** impiegato per rispondere, calcolato come differenza tra il click sulla risposta e il click precedente.
-
-### Metadati
-
-| Colonna                  | Descrizione                                                          |
-|--------------------------|----------------------------------------------------------------------|
-| `dateload`               | Timestamp di inizio del questionario                                 |
-| `screenw` / `screenh`    | Risoluzione schermo dell'utente (pixel)                              |
-| `introelapse`            | Secondi trascorsi sulla pagina introduttiva                          |
-| `testelapse`             | Secondi trascorsi sulla pagina con le domande                        |
-| `endelapse`              | Secondi trascorsi sulla pagina finale (conferma consenso)            |
-| `IPC`                    | Numero di risposte dallo stesso IP                                   |
-| `country`                | Paese dell'utente (rilevato tecnicamente, non dichiarato)            |
-| `lat_appx_lots_of_err`   | Latitudine approssimativa                                             |
-| `long_appx_lots_of_err`  | Longitudine approssimativa                                             |
-
----
-
-## Struttura della Repository
-
+## Struttura
 ```
-├── README.md               # Questo file
-├── description.txt         # Descrizione del dataset 
+├── README.md
+├── requirements.txt
+├── .gitignore
 ├── data/
-│   └── data.csv            # Dataset originale (non incluso nel repository)
-└── notebook/
-    └── analysis.ipynb      # Notebook Jupyter con l'analisi del dataset
+│   └── description.txt      # descrizione dettagliata delle colonne del dataset
+│   └── data-final.csv       # dataset (da scaricare, non incluso)
+└── notebooks/
+    └── big_five_analysis.ipynb
 ```
----
+
+## Setup
+```bash
+pip install -r requirements.txt
+jupyter notebook notebooks/big_five_analysis.ipynb
+```
+
+## Authors
+- Gianni Grasso
+- Gianni Toapanta
